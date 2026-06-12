@@ -1,8 +1,19 @@
 
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+const Part = (props) =>{
+  return (
+    <p> { props.name } {props.exercises} </p>
+  )
+}
+const Content = (props) =>{
+  return(
+    <div>
+      <Part name = {props.part1} exercises = {props.exercises1} />
+      <Part name ={props.part2} exercises = {props.exercises2} />
+      <Part name = {props.part3} exercises = {props.exercises3} />
+    </div>
+  )
+}
+
 
 const Header = (props) => {
   return (
@@ -10,19 +21,9 @@ const Header = (props) => {
   )
 }
 
-const Content = (props) =>{
-  return(
-    <div>
-      <p>{props.part1} {props.exercises1} </p>
-      <p>{props.part2} {props.exercises2} </p>
-      <p>{props.part3} {props.exercises3} </p>
-    </div>
-  )
-}
-
 const Total = (props)=>{
   return(
-    <h1>Total exercises is {props.total}</h1>
+    <p>Total exercises is {props.total}</p>
   )
 }
 
