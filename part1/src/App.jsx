@@ -16,7 +16,7 @@ const App = () => {
   const badClick = () => {
     setBad(bad + 1)
   }
-
+ 
   const all = good + neutral + bad
 
   const positive = all === 0
@@ -37,7 +37,11 @@ const App = () => {
 
       <h1>statistics</h1>
 
-      <Statistics
+    {
+       all === 0 
+        ? 
+        <p>No feedback given</p>
+        :<Statistics
         good={good}
         neutral={neutral}
         bad={bad}
@@ -45,6 +49,11 @@ const App = () => {
         average={average}
         positive={positive}
       />
+    }   
+   
+  
+
+      
     </div>
   )
 }
