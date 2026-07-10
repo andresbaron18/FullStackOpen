@@ -28,6 +28,7 @@ const App = () => {
       <>
       <Header name={course.name}></Header>
       <Content parts= {course.parts} ></Content>
+      <TotalExercises parts= {course.parts}></TotalExercises>
       </>
     )
    }  
@@ -53,6 +54,13 @@ const App = () => {
             {name} {exercises}
           </p>
         )
+      }
+      const TotalExercises = ({parts}) => {
+        
+        const total = parts.reduce((iteration, part) => iteration  + part.exercises,0) 
+        return(
+         <p> total of {total} exercises</p>
+           )
       }
     
 
