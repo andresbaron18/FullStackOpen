@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Fragment } from 'react';
+import Components from './Components'
 
 const App = () => {
   const courses = [
@@ -47,52 +47,6 @@ const App = () => {
       ]
     }
   ]
-  const Courses = ({ courses }) => {
-    return(
-      courses.map(curso => (
-        <Fragment key={curso.id}>
-        
-        <Header name={curso.name} ></Header>
-        <Content parts= {curso.parts} ></Content>
-        <TotalExercises parts= {curso.parts}></TotalExercises>
-        </Fragment>
-        
-      ))
-     
-    )
-   }  
-    const Header = ({name}) => {
-      return (
-         <h1> {name} </h1>
-    )
-   }
-
- 
-   const Content = ({parts}) => {
-    return(
-      parts.map(part =>(
-        <Part
-          key={part.id}
-          name={part.name}
-          exercises={part.exercises}
-        />
-      ))
-    )
-      }
-      const Part = ({name, exercises}) => {
-        return(
-           <p>
-            {name} {exercises}
-          </p>
-        )
-      }
-      const TotalExercises = ({parts}) => {
-        
-        const total = parts.reduce((iteration, part) => iteration  + part.exercises,0) 
-        return(
-         <p> total of {total} exercises</p>
-           )
-      } 
-  return <Courses courses={courses} />
+  return <Components courses={courses} />
 }
 export default App
